@@ -18,7 +18,7 @@ RUN php5enmod ldap
 
 RUN perl -p -i -e "s/max_execution_time = 30/max_execution_time = 120/g" /etc/php5/apache2/php.ini
 RUN perl -p -i -e "s/upload_max_filesize = 2M/upload_max_filesize = 500M/g" /etc/php5/apache2/php.ini
-RUN perl -p -i -e "s/post_max_size = 8M/upload_max_filesize = 500M/g" /etc/php5/apache2/php.ini
+RUN perl -p -i -e "s/post_max_size = 8M/post_max_size = 500M/g" /etc/php5/apache2/php.ini
 
 RUN mv ${DIR_WWW}/apache-default.conf /etc/apache2/sites-available/000-default.conf
 RUN ln -s /etc/apache2/mods-available/rewrite.load /etc/apache2/mods-enabled/rewrite.load
